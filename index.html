@@ -13,6 +13,16 @@
 		function toEnglish(){
 			 document.body.style.direction= "ltr";
 		}
+
+		function toggleInfo(){
+			if(document.getElementById("expand-collapse").innerHTML === "-"){
+				document.getElementById("expand-collapse").innerHTML = "+";
+				document.getElementById("harikumar-info").style.display = "none";
+			} else{
+				document.getElementById("expand-collapse").innerHTML = "-";
+				document.getElementById("harikumar-info").style.display = "block";
+			}
+		}
 	</script>
 </head>
 <body class="container max-w-5xl mx-auto p-8 bg-no-repeat bg-cover bg-opacity-60" style="background-image: url(https://www.worldtravelimages.net/Dubai_08_12.JPG);">
@@ -35,24 +45,31 @@
 		<section class="mt-8">
 			<h2>Activites</h2>
 			<ul class="flex mt-2 space-x-2">
-				<li class="text-sm opacity-80 h-8 px-2 border border-gray-600 inline-flex items-center justify-center">Equity investment and trading</li>
-				<li class="text-sm opacity-80 h-8 px-2 border border-gray-600 inline-flex items-center justify-center">Providing DEMAT and Trading account in India</li>
+				<li class="text-sm opacity-80 p-2 border border-gray-600">Equity investment and trading</li>
+				<li class="text-sm opacity-80 p-2 border border-gray-600">Providing DEMAT and Trading account in India</li>
 			</ul>
 		</section>
 
 		<section class="flex flex-col md:flex-row md:justify-between md:space-x-12 mt-8">
 			<section class="w-full md:w-1/2">
 				<h2>People</h2>
-				<h3 class="mt-2 text-sm">S Harikumar</h3>
-				<h4 class="text-sm opacity-80">Founder, Managing Director</h4>
+				<div class="flex justify-between items-center">
+					<div>
+						<h3 class="mt-2 text-sm">S Harikumar</h3>
+						<h4 class="text-sm opacity-80">Founder, Managing Director</h4>
+					</div>
+					<button id="expand-collapse" onclick="toggleInfo()">+</button>
+				</div>
 
-				<p class="mt-2 text-sm opacity-60 text-justify">
-					Having about 15 years’ working experience in Private, Government, Joint Sector companies, assignments abroad (since 1985-2000) and 20 years as an Investment Advisor. He is also an Authorised member of the National Stock Exchange, Mumbai since 2009. He was heading the IT department of ONGC - MRPL from 1994 to 1998.
-				</p>
+				<div id="harikumar-info" style="display: none;">
+					<p class="mt-2 text-sm opacity-60 text-justify">
+						Having about 15 years’ working experience in Private, Government, Joint Sector companies, assignments abroad (since 1985-2000) and 20 years as an Investment Advisor. He is also an Authorised member of the National Stock Exchange, Mumbai since 2009. He was heading the IT department of ONGC - MRPL from 1994 to 1998.
+					</p>
 
-				<p class="mt-2 text-sm opacity-60 text-justify">
-					He has worked as a Chief Systems Manager in Saleh & Abdulaziz Abahsain Co. Ltd., one of the top ten companies of the Kingdom of Saudi Arabia (having 20 divisions) and also worked as a Consultant in Singapore for a business group (2007).
-				</p>
+					<p class="mt-2 text-sm opacity-60 text-justify">
+						He has worked as a Chief Systems Manager in Saleh & Abdulaziz Abahsain Co. Ltd., one of the top ten companies of the Kingdom of Saudi Arabia (having 20 divisions) and also worked as a Consultant in Singapore for a business group (2007).
+					</p>
+				</div>
 
 				<h3 class="mt-2 text-sm">Rahul Harikumar</h3>
 				<h3 class="text-sm opacity-80">Director</h3>
@@ -61,7 +78,7 @@
 				<h4 class="text-sm opacity-80">Director</h4>				
 			</section>
 
-			<section class="w-full md:w-1/2">
+			<section class="mt-8 md:mt-0 w-full md:w-1/2">
 				<h2>Contact</h2>
 				<div class="mt-2">
 					<h3 class="text-sm opacity-80 inline-flex items-center space-x-2">
